@@ -1,0 +1,38 @@
+body {
+    
+    background-color: #fdf1d3;
+    text-align: center;
+  
+ 
+
+}
+
+ ul{
+    display: inline;
+    margin: auto;
+    padding: auto;
+    list-style: none;
+}
+li{
+    display: inline;
+}
+
+
+
+ ul li a {
+    font-family: 'Times New Roman', Times, serif;
+    display: inline;
+    text-decoration: none;
+    color: blue;
+    text-align: center;
+    padding: 14px 16px;
+   
+    
+}
+
+ul li a:hover {
+    color: #ff9900;
+}
+
+
+

@@ -7,7 +7,7 @@ body {
 
 }
 
- ul{
+ .primary-nav{
     display: inline;
     margin: auto;
     padding: auto;

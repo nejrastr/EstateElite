@@ -1,0 +1,14 @@
+img{
+    width: 20%;
+  height: auto;
+}
+
+body {
+    
+    background-color: #fdf1d3;
+
+}
+
+form input{
+   float: right;
+}

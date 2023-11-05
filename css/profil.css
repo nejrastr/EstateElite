@@ -26,10 +26,9 @@ body {
 
 }
 
-
-
 .sadrzaj form {
   margin-top: 0px;
+  padding: 20px;
 }
 
 .sadrzaj form label {

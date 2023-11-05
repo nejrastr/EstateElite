@@ -20,24 +20,34 @@ body {
     
     margin-left: 35px;
   }
-  .slika-stana, .slika-kuce{
+  .slika-stana, .slika-kuce, .slika-pp {
     text-align: center;
     width: 100%;
   height: 200px; 
-  object-fit: cover; 
+  
     
     
    
   }
-  .grid-container-stanovi, .grid-container-kuce{
+  .grid-container-stanovi, .grid-container-kuce, .grid-container-pp {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin: 30px; 
     justify-content: space-between;
     grid-gap: 20px;
   }
-  .stanovi, .kuce{
+  .stanovi{
     background-color: white;
+    border: 1px solid black;
+    padding: 20px;
+  }
+  .kuce{
+    background-color: powderblue;
+    border: 1px solid black;
+    padding: 20px;
+  }
+  .pp{
+    background-color:green;
     border: 1px solid black;
     padding: 20px;
   }

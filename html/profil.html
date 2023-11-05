@@ -4,12 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/profil.css">
-    <title>Profil
-    </title>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Profil</title>
 </head>
+
+
 <body>
-    <img src="korisnik.jpg" alt="korisnik">
+    <div class="meni">
+        <div class="container">
+            <ul class="primary-nav">
+                <li><a href="profil.html"><strong>Profil</strong></a></li>
+                <li><a href="nekretnina.html"><strong>Nekretnine</strong></a></li>
+                <li><a href="detalji.html"><strong>Detalji</strong></a></li>
+                <li><a href="#"><strong>Prijava</strong></a></li>
+            </ul>
+        </div>
+    </div>
+  
+    <div class="slika">
+        <img src="user.jpg" alt="korisnik">
+    </div>
     
+    <div class="sadrzaj">
     <form action="profil.html">
     <label for="name">Ime</label>
     <input type="text" id="name" name="name" placeholder="Input field"><br><br>
@@ -20,6 +36,8 @@
     <label for="password">Password</label>
     <input type="text" id="password" name="password" placeholder="Input field">
 </form>
+</div>
+
     
 </body>
 </html>

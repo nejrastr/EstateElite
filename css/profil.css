@@ -1,14 +1,32 @@
 img{
-    width: 20%;
-  height: auto;
+    width: 8%;
+  height: 100px;
+  margin-top: 50px;
+  padding: 10px;
+  margin-left: 10px;
+  
 }
 
 body {
     
     background-color: #fdf1d3;
+    padding: 30px;
+    overflow-y: scroll; 
+    height: 100vh;
+    
+
+}
+.meni{
+  position: fixed;
+  top: 0;
+  width: 100%;
 
 }
 
-form input{
-   float: right;
+
+
+.sadrzaj {
+  padding-top: 30px; 
+  
+  
 }

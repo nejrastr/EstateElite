@@ -34,7 +34,7 @@ h2 {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin: 30px;
   justify-content: space-between;
-  grid-column-gap: 20px;
+  grid-gap: 20px;
 }
 
 .stanovi {

@@ -1,69 +1,72 @@
 body {
 
-    background-color: #fdf1d3;
-    padding: 0;
-    margin: 0;
-    height: 100vh;
+  background-color: #fdf1d3;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
   
-  
-  }
-  
-  .meni {
-  
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: wheat;
-  
-  }
-  .sadrzaj{
-    margin-top: 20px;
-    margin-left: 10px;
-    padding: 20px;
-   
-  }
 
 
-  .desna-kolona {
-    float: right;
-    
-  }
+}
 
-  .detalji p{
-    margin-top: 50px;
-    padding: 0;
-  }
-  .osnovno img{
-   
-    margin: 0 auto;
- width: 30%;
- height: 30%;
-  
-  }
- 
-  .upiti ul{
-    grid-template-rows: auto;
-    display: grid;
-    padding: 0;
-  }
+.meni {
 
-  .upiti li {
-    border: 1px solid black;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: white;
-    
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: wheat;
+
+}
+
+.sadrzaj {
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 10px;
+
+
+}
+.osnovno{
+  margin-top: 50px;
+}
+.opis{
+  margin-top: 50px;
+}
+
+.detalji {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 
+.desna-kolona {
+  float: right;
+  margin-right: 300px;
+
+}
+
+
+
+.sadrzaj .osnovno img {
+
+ width: 100%;
+ height: 420px;
   
-  
 
-  
-
+}
 
 
+.upiti ul {
+  grid-template-rows: auto;
+  display: grid;
+
+}
+
+.upiti li {
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: white;
 
 
-
- 
+}

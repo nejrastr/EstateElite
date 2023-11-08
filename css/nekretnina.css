@@ -1,83 +1,82 @@
 body {
 
-    background-color: #fdf1d3;
-    padding: 0;
-    margin: 0;
-    margin-top: 60px;
-    height: 100vh;
-  
-  }
-  
-  .meni {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: wheat;
-  
-  }
-  
-   h2{
-    
-    margin-left: 35px;
-  }
-  .slika-stana, .slika-kuce, .slika-pp {
-    text-align: center;
-    width: 100%;
-  height: 200px; 
-  
-    
-    
-   
-  }
-  .grid-container-stanovi, .grid-container-kuce, .grid-container-pp {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    margin: 30px; 
-    justify-content: space-between;
-    grid-gap: 20px;
-  }
-  .stanovi{
-    background-color: white;
-    border: 1px solid black;
-    padding: 20px;
-  }
-  .kuce{
-    background-color: powderblue;
-    border: 1px solid black;
-    padding: 20px;
-  }
-  .pp{
-    background-color:green;
-    border: 1px solid black;
-    padding: 20px;
-  }
-  .detalji{
-    display: block;
-    width: 80px;
-    margin: 0 auto;
-    margin-top: 10px;
-    background-color: black;
-    text-align: center;
-    color: white;
+  background-color: #fdf1d3;
+  margin: 0;
+  width: 100%;
+  display: block;
 
-  }
-  .lijeve-informacije{
-    margin-top: 30px;
-    text-align: left;
-    font-weight: 5000;
-  }
-  .desne-informacije{
-    text-align: right;
-    
-    font-weight: 5000;
-  }
+}
 
-  
+.meni {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: wheat;
 
-  
-  
+}
 
- 
-  
-  
-  
+h2 {
+  margin-top: 60px;
+
+  margin-left: 35px;
+}
+
+.slika-stana,
+.slika-kuce,
+.slika-pp {
+  text-align: center;
+  width: 100%;
+  height: 200px;
+}
+
+.listapp, .listakuca, .listastanova {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 30px;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.stanovi {
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+  width: 300px;
+}
+
+.kuce {
+  background-color: powderblue;
+  border: 1px solid black;
+  padding: 20px;
+  width: 300px;
+}
+
+.pp {
+  background-color: green;
+  border: 1px solid black;
+  padding: 20px;
+  width: 300px;
+}
+
+.detalji {
+  display: block;
+  width: 80px;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: black;
+  text-align: center;
+  color: white;
+
+}
+
+.lijeve-informacije {
+
+  text-align: left;
+  font-weight: 500;
+
+}
+
+.desne-informacije {
+  text-align: right;
+
+}

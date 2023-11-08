@@ -1,34 +1,32 @@
 body {
-    
+
     background-color: #fdf1d3;
 
 }
 
- .primary-nav{
-   
+.primary-nav {
+
     text-align: center;
 }
-li{
+
+li {
     display: inline;
     margin: 0 10px;
-    
+
 }
 
 
 
- ul li a {
+ul li a {
     font-family: 'Times New Roman', Times, serif;
     text-decoration: none;
     color: blue;
-  
+
     padding: 14px 16px;
-   
-    
+
+
 }
 
 ul li a:hover {
     color: #ff9900;
 }
-
-
-

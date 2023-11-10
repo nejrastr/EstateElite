@@ -35,6 +35,7 @@ h2 {
   margin: 30px;
   justify-content: space-between;
   grid-gap: 20px;
+  
 }
 
 .stanovi {
@@ -43,6 +44,7 @@ h2 {
   padding: 20px;
   width: 300px;
   gap: 20px;
+  
 }
 
 .kuce {

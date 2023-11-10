@@ -4,7 +4,7 @@ body {
 
 }
 
-.primary-nav {
+.container {
 
     text-align: center;
 }
@@ -17,13 +17,12 @@ li {
 
 
 
-ul li a {
+.primary-nav li a {
     font-family: 'Times New Roman', Times, serif;
     text-decoration: none;
     color: blue;
 
-    padding: 14px 16px;
-
+   
 
 }
 

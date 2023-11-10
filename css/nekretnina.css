@@ -33,8 +33,9 @@ h2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin: 30px;
-  justify-content: space-between;
+ 
   grid-gap: 20px;
+  text-align: center;
   
 }
 

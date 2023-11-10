@@ -5,8 +5,7 @@ body {
   width: 100%;
   
  
-  justify-content: center;
-  align-items: center;
+ 
   
 
 }
@@ -22,8 +21,9 @@ body {
 
   
  width: 100%;
-  margin-left: 0 auto;
+  margin-left: 30px;
   margin-right: 0 auto;
+  align-items: center;
   
   
 }

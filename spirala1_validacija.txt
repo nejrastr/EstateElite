@@ -1,0 +1,21 @@
+U validaciji spirale koristila sam: https://validator.w3.org/
+Rezultati validacije po dokumentima: 
+
+HTML
+1. meni.html BEZ GRESAKA
+2. profil.html BEZ GRESAKA
+3. nekretnina.html BEZ GRESAKA
+4. detalji.html Promjena iz engleskog, u bosanski jezik
+                Greska s ponavljanjem id-ija, ispravljeno
+
+
+
+CSS validator: https://jigsaw.w3.org/css-validator/
+1. style.css BEZ GRESAKA
+2. profil.css Value Error : height Unknown dimension 14s0px , slucajno slovo 's' ostalo u visini pa nije fino prepoznavalo.
+3. nekretnina.css Previse argumenata u prilikom postavljanja margine, pa nije prepoznavalo tu naredbu.
+4. detalji.css BEZ GRESAKA
+
+
+
+ 

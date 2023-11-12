@@ -23,8 +23,9 @@ body {
 .primary-nav li {
   
   display: inline;
-  height: 40px;
+  height: 30px;
   margin: 0 5px;
+  margin-top: 10px;
   white-space: nowrap; 
 }
 
@@ -51,7 +52,7 @@ body {
   padding: 20px;
   white-space: nowrap;
 }
-s
+
 .sadrzaj form {
   margin-top: 0px;
   padding: 20px;

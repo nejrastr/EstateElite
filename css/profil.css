@@ -24,8 +24,8 @@ body {
   
   display: inline;
   height: 40px;
-  margin: 0 5px; /* Smanjivanje razmaka između stavki u meniju */
-  white-space: nowrap; /* Sprječava preljevanje teksta na više redova */
+  margin: 0 5px;
+  white-space: nowrap; 
 }
 
 .meni .primary-nav {
@@ -33,7 +33,7 @@ body {
   padding: 0;
   margin: 0;
   display: flex;
-  max-width: 100%; /* Ograničenje širine menija */
+  max-width: 100%; 
 }
 
 

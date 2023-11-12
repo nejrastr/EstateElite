@@ -1,0 +1,3 @@
+Da bi se postiglo da se sadrzaj pomjera u desno za ekrane vece od 500px, morala sam koristii media queries, u kojim sam dodatno specificirala sta se desava u slucaju da je ekran veci ili jednak 500px.
+Nakon toga bilo je potrebno malo nastimati razmake i margine u sadrzaju, da bi se uklopilo fino za bilo koju velicinu
+i koristila sam jos white-space: nowrap koji mi je omogucio da mi se forma ne raspada prilikom smanjivanja ekrana.

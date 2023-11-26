@@ -24,7 +24,7 @@ for(let nekretnina of nekretnine){
         <img src="${slikica}" alt="stan1">
     </div>
     <div class="lijeve-informacije">
-        <p>Stan: ${nekretnina.naziv} </p>
+        <p>Naziv: ${nekretnina.naziv} </p>
         <p>Kvadratura: ${nekretnina.kvadratura} m&sup2; </p>
     </div>
     <div class="desne-informacije">
@@ -39,7 +39,7 @@ for(let nekretnina of nekretnine){
         <img src="${slikica}" alt="kuca1">
     </div>
     <div class="lijeve-informacije">
-        <p>Kuća: ${nekretnina.naziv}</p>
+        <p>Naziv: ${nekretnina.naziv}</p>
         <p>Kvadratura: ${nekretnina.kvadratura} m&sup2; </p>
     </div>
     <div class="desne-informacije">
@@ -57,7 +57,7 @@ for(let nekretnina of nekretnine){
         <img src="${slikica}" alt="pp1">
     </div>
     <div class="lijeve-informacije">
-        <p>Poslovni: ${nekretnina.naziv}</p>
+        <p>Naziv: ${nekretnina.naziv}</p>
         <p>Kvadratura: ${nekretnina.kvadratura} m&sup2; </p>
     </div>
     <div class="desne-informacije">
@@ -232,12 +232,12 @@ const listaNekretnina = [{
 },{
   id: 9,
   tip_nekretnine: "Stan",
-  naziv: "Poslovni prostor u Centru",
+  naziv: "Stan Ilidza",
   kvadratura: 100,
-  cijena: 232000,
+  cijena: 12000,
   tip_grijanja: "plin",
-  lokacija: "Sarajevo Centar",
-  godina_izgradnje: 2019,
+  lokacija: "Ilidza",
+  godina_izgradnje: 2018,
   datum_objave: "01.10.2023.",
   opis: "Sociis natoque penatibus.",
   upiti: [{
@@ -251,12 +251,12 @@ const listaNekretnina = [{
 },{
   id: 10,
   tip_nekretnine: "Stan",
-  naziv: "Poslovni prostor u Centru",
+  naziv: "Stan Stari grad",
   kvadratura: 100,
   cijena: 232000,
   tip_grijanja: "plin",
-  lokacija: "Sarajevo Centar",
-  godina_izgradnje: 2019,
+  lokacija: "Bascarsija",
+  godina_izgradnje: 1987,
   datum_objave: "01.10.2023.",
   opis: "Sociis natoque penatibus.",
   upiti: [{
@@ -270,12 +270,12 @@ const listaNekretnina = [{
 },{
   id: 11,
   tip_nekretnine: "Kuca",
-  naziv: "Poslovni prostor u Centru",
+  naziv: "Kuca oaza",
   kvadratura: 100,
-  cijena: 232000,
-  tip_grijanja: "plin",
+  cijena: 300000,
+  tip_grijanja: "pumpa",
   lokacija: "Sarajevo Centar",
-  godina_izgradnje: 2019,
+  godina_izgradnje: 2013,
   datum_objave: "01.10.2023.",
   opis: "Sociis natoque penatibus.",
   upiti: [{
@@ -289,11 +289,11 @@ const listaNekretnina = [{
 },{
   id: 12,
   tip_nekretnine: "Kuca",
-  naziv: "Poslovni prostor u Centru",
+  naziv: "Porodicna idila",
   kvadratura: 100,
   cijena: 232000,
   tip_grijanja: "plin",
-  lokacija: "Sarajevo Centar",
+  lokacija: "Sarajevos",
   godina_izgradnje: 2019,
   datum_objave: "01.10.2023.",
   opis: "Sociis natoque penatibus.",

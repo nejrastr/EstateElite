@@ -8,7 +8,7 @@ function spojiNekretnine(divReferenca, instancaModula, tip_nekretnine) {
 
   const div=document.getElementById(divReferenca.id);
   if(!div){
-    console.error(`Div with id ${divReferenca.id} not found.`);
+    console.error(`Div  ${divReferenca.id} ne postoji.`);
     return;
   }
 

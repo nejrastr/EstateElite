@@ -191,6 +191,120 @@ const listaNekretnina = [{
       korisnik_id: 2,
       tekst_upita: "Phasellus viverra nulla."
   }]
+},{
+  id: 7,
+  tip_nekretnine: "Poslovni prostor",
+  naziv: "Poslovni prostor u Centru",
+  kvadratura: 100,
+  cijena: 232000,
+  tip_grijanja: "plin",
+  lokacija: "Sarajevo Centar",
+  godina_izgradnje: 2019,
+  datum_objave: "01.10.2023.",
+  opis: "Sociis natoque penatibus.",
+  upiti: [{
+      korisnik_id: 1,
+      tekst_upita: "Nullam eu pede mollis pretium."
+  },
+  {
+      korisnik_id: 2,
+      tekst_upita: "Phasellus viverra nulla."
+  }]
+},{
+  id: 8,
+  tip_nekretnine: "Poslovni prostor",
+  naziv: "Poslovni prostor u Centru",
+  kvadratura: 100,
+  cijena: 232000,
+  tip_grijanja: "plin",
+  lokacija: "Sarajevo Centar",
+  godina_izgradnje: 2019,
+  datum_objave: "01.10.2023.",
+  opis: "Sociis natoque penatibus.",
+  upiti: [{
+      korisnik_id: 1,
+      tekst_upita: "Nullam eu pede mollis pretium."
+  },
+  {
+      korisnik_id: 2,
+      tekst_upita: "Phasellus viverra nulla."
+  }]
+},{
+  id: 9,
+  tip_nekretnine: "Stan",
+  naziv: "Poslovni prostor u Centru",
+  kvadratura: 100,
+  cijena: 232000,
+  tip_grijanja: "plin",
+  lokacija: "Sarajevo Centar",
+  godina_izgradnje: 2019,
+  datum_objave: "01.10.2023.",
+  opis: "Sociis natoque penatibus.",
+  upiti: [{
+      korisnik_id: 1,
+      tekst_upita: "Nullam eu pede mollis pretium."
+  },
+  {
+      korisnik_id: 2,
+      tekst_upita: "Phasellus viverra nulla."
+  }]
+},{
+  id: 10,
+  tip_nekretnine: "Stan",
+  naziv: "Poslovni prostor u Centru",
+  kvadratura: 100,
+  cijena: 232000,
+  tip_grijanja: "plin",
+  lokacija: "Sarajevo Centar",
+  godina_izgradnje: 2019,
+  datum_objave: "01.10.2023.",
+  opis: "Sociis natoque penatibus.",
+  upiti: [{
+      korisnik_id: 1,
+      tekst_upita: "Nullam eu pede mollis pretium."
+  },
+  {
+      korisnik_id: 2,
+      tekst_upita: "Phasellus viverra nulla."
+  }]
+},{
+  id: 11,
+  tip_nekretnine: "Kuca",
+  naziv: "Poslovni prostor u Centru",
+  kvadratura: 100,
+  cijena: 232000,
+  tip_grijanja: "plin",
+  lokacija: "Sarajevo Centar",
+  godina_izgradnje: 2019,
+  datum_objave: "01.10.2023.",
+  opis: "Sociis natoque penatibus.",
+  upiti: [{
+      korisnik_id: 1,
+      tekst_upita: "Nullam eu pede mollis pretium."
+  },
+  {
+      korisnik_id: 2,
+      tekst_upita: "Phasellus viverra nulla."
+  }]
+},{
+  id: 12,
+  tip_nekretnine: "Kuca",
+  naziv: "Poslovni prostor u Centru",
+  kvadratura: 100,
+  cijena: 232000,
+  tip_grijanja: "plin",
+  lokacija: "Sarajevo Centar",
+  godina_izgradnje: 2019,
+  datum_objave: "01.10.2023.",
+  opis: "Sociis natoque penatibus.",
+  upiti: [{
+      korisnik_id: 1,
+      tekst_upita: "Nullam eu pede mollis pretium."
+  },
+  {
+      korisnik_id: 2,
+      tekst_upita: "Phasellus viverra nulla."
+  }]
 }]
 
 const listaKorisnika = [{

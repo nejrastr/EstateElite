@@ -41,8 +41,8 @@ img {
  #stan, #kuca, #pp {
   display: grid;
   grid-template-columns: repeat(auto-fill,300px);
-
   gap: 20px;
+  
   text-align: center;
   
 

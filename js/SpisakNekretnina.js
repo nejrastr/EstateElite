@@ -55,4 +55,4 @@ let SpisakNekretnina = function () {
     }
 };
 
-export {SpisakNekretnina}
+//export {SpisakNekretnina}

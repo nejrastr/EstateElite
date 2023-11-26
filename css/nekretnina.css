@@ -39,16 +39,12 @@ img {
 }
 
  .lista {
-  display: grid;
-  grid-template-columns: repeat(auto-fill,300px);
+ display: none;
 
   gap: 20px;
-
+  max-height: 300px;
   text-align: center;
-  
-  
 
- 
 }
 
 
@@ -57,6 +53,7 @@ img {
   background-color: white;
   border: 1px solid black;
   padding: 20px;
+  width: 250px;
  
 
   
@@ -66,6 +63,7 @@ img {
   background-color: powderblue;
   border: 1px solid black;
   padding: 20px;
+  width: 250px;
   
 }
 
@@ -98,4 +96,16 @@ img {
 .desne-informacije {
   text-align: right;
 
+}
+#stan{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+#kuca{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+#pp{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }

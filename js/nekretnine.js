@@ -1,8 +1,8 @@
-//import { SpisakNekretnina } from '../js/SpisakNekretnina.js';
+
 
 
 function spojiNekretnine(divReferenca, instancaModula, tip_nekretnine) {
-  // pozivanje metode za filtriranje
+  
   
   const nekretnine=instancaModula.filtrirajNekretnine({ tip_nekretnine: tip_nekretnine });
 

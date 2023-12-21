@@ -1,0 +1,124 @@
+[
+  {
+    "id": 1,
+    "tip_nekretnine": "Stan",
+    "naziv": "Useljiv stan Sarajevo",
+    "kvadratura": 58,
+    "cijena": 232000,
+    "tip_grijanja": "plin",
+    "lokacija": "Novo Sarajevo",
+    "godina_izgradnje": 2019,
+    "datum_objave": "01.10.2023.",
+    "opis": "Sociis natoque penatibus.",
+    "upiti": [
+      {
+        "korisnik_id": 1,
+        "tekst_upita": "Nullam eu pede mollis pretium."
+      },
+      {
+        "korisnik_id": 2,
+        "tekst_upita": "Phasellus viverra nulla."
+      },
+      {
+        "korisnik_id": "IKrpjNlq6YHq2aTyo1EbVdbinH4zvrk6",
+        "tekst_upita": "ne radi"
+      },
+      {
+        "tekst_upita": "molimmmm te"
+      },
+      {
+        "tekst_upita": "Imate li bazen"
+      },
+      {
+        "tekst_upita": "Imate li bazen"
+      },
+      {
+        "tekst_upita": "Imate li rostilj"
+      },
+      {
+        "tekst_upita": "Imate li rostilj"
+      },
+      {
+        "korisnik_id": "VFBu1tFizfapWC-Ol6Ux0Sqnwf3RUM2X",
+        "tekst_upita": "Imate li rostilj"
+      },
+      {
+        "korisnik_id": "VFBu1tFizfapWC-Ol6Ux0Sqnwf3RUM2X",
+        "tekst_upita": "Imate li rostilj"
+      },
+      {
+        "tekst_upita": "Imate li rostilj"
+      },
+      {
+        "tekst_upita": "Imate li rostilj"
+      },
+      {
+        "tekst_upita": "nema"
+      },
+      {
+        "tekst_upita": "nema"
+      },
+      {
+        "korisnik_id": "54YUELAE5a_UugdKpQo3DmbLiUX9-lHf",
+        "tekst_upita": "nejra neki"
+      },
+      {
+        "korisnik_id": "_ETkhQlABvLcBInr5wiMF-eYX5fOQTG6",
+        "tekst_upita": "nejra neki"
+      },
+      {
+        "korisnik_id": "_ETkhQlABvLcBInr5wiMF-eYX5fOQTG6",
+        "tekst_upita": "nejra neki"
+      },
+      {
+        "korisnik_id": "_ETkhQlABvLcBInr5wiMF-eYX5fOQTG6",
+        "tekst_upita": "nejra neki"
+      },
+      {
+        "korisnik_id": "_ETkhQlABvLcBInr5wiMF-eYX5fOQTG6",
+        "tekst_upita": "nejra neki"
+      },
+      {
+        "tekst_upita": "nejra neki"
+      },
+      {
+        "korisnik_id": "nejrastr",
+        "tekst_upita": "ne mogu vise"
+      },
+      {
+        "korisnik_id": "K9p57gYaG9-YojErnyCFNdAQbs3i6FSR",
+        "tekst_upita": "sto ne radi"
+      },
+      {
+        "korisnik_id": "K9p57gYaG9-YojErnyCFNdAQbs3i6FSR",
+        "tekst_upita": "sto ne radi"
+      },
+      {
+        "korisnik_id": "K9p57gYaG9-YojErnyCFNdAQbs3i6FSR",
+        "tekst_upita": "sto ne radi"
+      },
+      {
+        "korisnik_id": "nejrastr",
+        "tekst_upita": "....."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "tip_nekretnine": "Poslovni prostor",
+    "naziv": "Mali poslovni prostor",
+    "kvadratura": 20,
+    "cijena": 70000,
+    "tip_grijanja": "struja",
+    "lokacija": "Centar",
+    "godina_izgradnje": 2005,
+    "datum_objave": "20.08.2023.",
+    "opis": "Magnis dis parturient montes.",
+    "upiti": [
+      {
+        "korisnik_id": 2,
+        "tekst_upita": "Integer tincidunt."
+      }
+    ]
+  }
+]

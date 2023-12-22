@@ -8,7 +8,7 @@ const { log } = require('console');
 const app = express();
 
 app.use(session({
-  secret: '07aa0e4bd30a37f9dd5ca350d1ae0014e3487ae1c8f028ca467e228e011a15e0',
+  secret: '6e3aac184678cfa60896fabe3438158060337e8877e15f51dd89f99cc96dc795',
   resave: true,
   saveUninitialized: true
 }));
@@ -91,14 +91,16 @@ app.get('/korisnik', (req, res) => {
 });
 
 app.post('/upit', (req, res) => {
-  console.log('Username in session:', req.session.username);
+  //console.log('Username in session:', req.session.username);
 
   if (req.session.username) {
 
   const nekretnine = JSON.parse(fs.readFileSync('data/nekretnine.json', 'utf8'));
+  const korisnici = JSON.parse(fs.readFileSync('data/korisnici.json', 'utf-8'));
+  const korisnik = korisnici.find((user) => user.username === req.session.username);
 
   const { nekretnina_id, tekst_upita } = req.body;
-    const korisnikId = req.session.username;
+    const korisnikId = korisnik.id;
 
     const nekretnina = nekretnine.find(posjed => posjed.id == nekretnina_id);
 
@@ -113,7 +115,7 @@ app.post('/upit', (req, res) => {
     }
 
     nekretnina.upiti.push({ korisnik_id: korisnikId, tekst_upita });
-    ////////////////// ne radi uspjesno dodavanje id-ija osobe koja je poslala zahtjev
+    //radi dodavanje upita
 
     fs.writeFileSync('data/nekretnine.json', JSON.stringify(nekretnine, null, 2));
     res.status(200).json({ poruka: 'Upit je uspješno dodan' });

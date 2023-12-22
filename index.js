@@ -74,8 +74,8 @@ app.get('/korisnik', (req, res) => {
     const korisnici = JSON.parse(fs.readFileSync('data/korisnici.json', 'utf-8'));
     const korisnik = korisnici.find((user) => user.username === req.session.username);
     if (korisnik) {
-      const { id, ime, prezime, username } = korisnik;
-      res.status(200).json({ id, ime, prezime, username });
+      const { id, ime, prezime, username,password} = korisnik;
+      res.status(200).json({ id, ime, prezime, username, password });
     }
     else {
       res.status(401).json({ greska: "Korisnik ne postoji" });

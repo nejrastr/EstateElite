@@ -44,6 +44,10 @@
       {
         "korisnik_id": 2,
         "tekst_upita": "Integer tincidunt."
+      },
+      {
+        "korisnik_id": 2,
+        "tekst_upita": "Imate li klimu"
       }
     ]
   }

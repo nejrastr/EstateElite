@@ -29,29 +29,26 @@ app.use('/js', express.static(path.join(__dirname, 'public', 'js')));
 
 // ruta login
 app.post('/login', (req, res) => {
-
   const korisnici = JSON.parse(fs.readFileSync('data/korisnici.json', 'utf-8'));
   const { username, password } = req.body;
-  // ulazimo u uslov ako postoje vrijednosti
+  
   let korisnik = null;
 
   for (let i = 0; i < korisnici.length; i++) {
-    if (korisnici[i].username == username && korisnici[i].password == password) {
+    if (korisnici[i].username === username) {
       korisnik = korisnici[i];
       break;
-    }//hashiranje passworda??
+    }
   }
 
-  if (korisnik) {
+  if (korisnik && bcrypt.compare(password, korisnik.password)) {
     req.session.username = username;
     res.status(200).json({ poruka: 'Uspjesna prijava' });
-  }
-  else {
+  } else {
     res.status(401).json({ greska: 'Neuspjesna prijava' });
   }
-}
+});
 
-);
 //ruta logout
 app.post('/logout', (req, res) => {
   if (req.session.username) {
@@ -148,13 +145,8 @@ app.put('/korisnik', (req,res)=>{
         user.password = password;
       }
 
-      
       fs.writeFileSync('data/korisnici.json', JSON.stringify(korisnici, null, 2));
-
-
-
-
-    res.status(200).json({poruka:'Podaci su uspjesno azurirani'});
+      res.status(200).json({poruka:'Podaci su uspjesno azurirani'});
 
   }else{
     res.status(401).json({greska:'Neautorizovan prisup'});

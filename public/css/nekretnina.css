@@ -1,17 +1,42 @@
 body {
 
   background-color: #fdf1d3;
+  padding: 0;
   margin: 0;
-  
+  height: 100vh;
+
 
 }
 
 .meni {
+
   position: fixed;
+ 
   top: 0;
   width: 100%;
   background-color: wheat;
+  
+  align-items: center;
+  justify-content: center;
 
+}
+.primary-nav li {
+
+  height: 30px;
+  margin: 0 5px;
+  margin-top: 10px;
+  white-space: nowrap; 
+
+  display: flex;
+  gap: 10px;
+}
+
+.meni .primary-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  max-width: 100%; 
 }
 .sadrzaj{
 
@@ -25,9 +50,9 @@ body {
   
 }
 
- .sadrzaj h3 {
+ .sadrzaj h2 {
 
-  margin-top: 60px;
+  margin-top: 100px;
 
 
 }

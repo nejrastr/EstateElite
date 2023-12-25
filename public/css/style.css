@@ -1,18 +1,37 @@
 body {
 
     background-color: #fdf1d3;
+    margin: 0;
 
 }
 
 .container {
 
     text-align: center;
-}
+    top: 0;
+    width: 100%;
+    background-color: wheat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    
+    }
 
-li {
+/* li , button{
     display: inline;
-    margin: 0 10px;
+    top: 0;
+ 
+   
 
+
+} */
+
+
+.primary-nav li {
+    
+    display: inline-flex;
+    gap: 10px;
 }
 
 
@@ -21,8 +40,9 @@ li {
     font-family: 'Times New Roman', Times, serif;
     text-decoration: none;
     color: blue;
-
+    padding-left: 30px;
    
+    
 
 }
 

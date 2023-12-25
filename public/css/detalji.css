@@ -11,10 +11,14 @@ body {
 
 .meni {
 
+  display: flex;
+
   position: fixed;
   top: 0;
   width: 100%;
   background-color: wheat;
+
+
 
 }
 
@@ -84,11 +88,14 @@ body {
   float: left;
 }
 #upiti li {
+
+
   border: 1px solid black;
   padding-left: 15px;
   padding-top: 7px;
   margin-bottom: 10px;
   background-color: white;
+
 
 
 

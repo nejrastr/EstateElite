@@ -14,6 +14,7 @@ app.use(session({
 }));
 
 
+let isLogged = false;
 
 
 app.use(bodyParser.json());
@@ -27,27 +28,39 @@ app.use('/js', express.static(path.join(__dirname, 'public', 'js')));
 
 
 
-// ruta login
-app.post('/login', (req, res) => {
+app.post('/login', async (req, res) => {
   const korisnici = JSON.parse(fs.readFileSync('data/korisnici.json', 'utf-8'));
   const { username, password } = req.body;
+
+  // const hashedPassword = await bcrypt.hash(password, 10)
   
   let korisnik = null;
 
   for (let i = 0; i < korisnici.length; i++) {
     if (korisnici[i].username === username) {
       korisnik = korisnici[i];
+
+      // korisnici[i].password = hashedPassword
       break;
     }
   }
 
-  if (korisnik && bcrypt.compare(password, korisnik.password)) {
+  // console.log(hashedPassword)
+
+
+  // console.log(korisnici)
+
+  // fs.writeFileSync('data/korisnici.json', JSON.stringify(korisnici, null, 2));
+
+  if (korisnik && await bcrypt.compare(password, korisnik.password)) {
     req.session.username = username;
+    isLogged = true;
     res.status(200).json({ poruka: 'Uspjesna prijava' });
   } else {
     res.status(401).json({ greska: 'Neuspjesna prijava' });
   }
 });
+
 
 //ruta logout
 app.post('/logout', (req, res) => {
@@ -57,6 +70,7 @@ app.post('/logout', (req, res) => {
       if (err) {
         throw err;
       } else {
+        isLogged = false;
         res.status(200).json({ poruka: 'Uspješno ste se odjavili' });
       }
     });
@@ -74,7 +88,7 @@ app.get('/korisnik', (req, res) => {
     const korisnici = JSON.parse(fs.readFileSync('data/korisnici.json', 'utf-8'));
     const korisnik = korisnici.find((user) => user.username === req.session.username);
     if (korisnik) {
-      const { id, ime, prezime, username,password} = korisnik;
+      const { id, ime, prezime, username, password } = korisnik;
       res.status(200).json({ id, ime, prezime, username, password });
     }
     else {
@@ -86,17 +100,20 @@ app.get('/korisnik', (req, res) => {
   }
 
 });
+app.get('/isLogged', (req, res) => {
+  res.json({ isLogged });
+});
 
 app.post('/upit', (req, res) => {
   //console.log('Username in session:', req.session.username);
 
   if (req.session.username) {
 
-  const nekretnine = JSON.parse(fs.readFileSync('data/nekretnine.json', 'utf8'));
-  const korisnici = JSON.parse(fs.readFileSync('data/korisnici.json', 'utf-8'));
-  const korisnik = korisnici.find((user) => user.username === req.session.username);
+    const nekretnine = JSON.parse(fs.readFileSync('data/nekretnine.json', 'utf8'));
+    const korisnici = JSON.parse(fs.readFileSync('data/korisnici.json', 'utf-8'));
+    const korisnik = korisnici.find((user) => user.username === req.session.username);
 
-  const { nekretnina_id, tekst_upita } = req.body;
+    const { nekretnina_id, tekst_upita } = req.body;
     const korisnikId = korisnik.id;
 
     const nekretnina = nekretnine.find(posjed => posjed.id == nekretnina_id);
@@ -123,41 +140,44 @@ app.post('/upit', (req, res) => {
 
 });
 
-app.put('/korisnik', (req,res)=>{
-  if(req.session.username){
-    
+app.put('/korisnik', (req, res) => {
+  if (req.session.username) {
+
     const korisnici = JSON.parse(fs.readFileSync('data/korisnici.json', 'utf8'));
-    const{ime, prezime, username, password}=req.body;
+    const { ime, prezime, username, password } = req.body;
 
     const user = korisnici.find(u => u.username === req.session.username);
 
     if (user) {
-     
-        user.ime = ime;
-      }
-      if (prezime) {
-        user.prezime = prezime;
-      }
-      if (username) {
-        user.username = username;
-      }
-      if (password) {
-        user.password = password;
-      }
 
-      fs.writeFileSync('data/korisnici.json', JSON.stringify(korisnici, null, 2));
-      res.status(200).json({poruka:'Podaci su uspjesno azurirani'});
+      user.ime = ime;
+    }
+    if (prezime) {
+      user.prezime = prezime;
+    }
+    if (username) {
+      user.username = username;
+    }
+    if (password) {
+      user.password = password;
+    }
 
-  }else{
-    res.status(401).json({greska:'Neautorizovan prisup'});
+    fs.writeFileSync('data/korisnici.json', JSON.stringify(korisnici, null, 2));
+    res.status(200).json({ poruka: 'Podaci su uspjesno azurirani' });
+
+  } else {
+    res.status(401).json({ greska: 'Neautorizovan prisup' });
   }
 
 });
 
-app.get('/nekretnine', (req,res)=>{
-  const nekretnine= JSON.parse(fs.readFileSync('data/nekretnine.json', 'utf8'));
+
+app.get('/nekretnine', (req, res) => {
+  const nekretnine = JSON.parse(fs.readFileSync('data/nekretnine.json', 'utf8'));
   res.status(200).json(nekretnine);
 });
+
+
 
 
 app.listen(3000, () => {

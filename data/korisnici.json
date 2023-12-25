@@ -1,16 +1,16 @@
 [
   {
     "id": 1,
-    "ime": "Nejroni",
+    "ime": "Nejra",
     "prezime": "Strsevic",
-    "username": "nejrastr",
-    "password": "57bdd55f941ea8c89b7ac19998e489f4"
+    "username": "timur",
+    "password": "$2b$10$9mrr/ABscnLIphnFJSoXK.DVwh5LIaXbNiT0LeRr2GX506i6OP9tS"
   },
   {
     "id": 2,
+    "ime": "Arman",
     "prezime": "Hadzigrahic",
     "username": "itsarmeon",
-    "password": "1cde0f2b645d6212d4fc28bfc24cd9af",
-    "ime": "Nikola"
+    "password": "$2b$10$YhN0vtstfuzqXJtaQuw.YOsHMcMaR/kmKyP0dT.XZhTsh8li2Hav."
   }
 ]

@@ -1,1 +1,15 @@
+.forma{
+    padding-top: 70px;
+    margin-left: 20px;
+}
 
+.forma label{
+    margin: 20px;
+    margin-bottom: 20px;
+}
+.forma input{
+    margin-bottom: 20px;
+}
+input[type="submit"] {
+    margin-left: 20px; 
+}

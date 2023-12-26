@@ -1,6 +1,6 @@
 //const bcrypt = require('bcrypt');
 
-const PoziviAjax = (async () => {
+const PoziviAjax = function () {
     // fnCallback se u svim metodama poziva kada stigne
     // odgovor sa servera putem Ajax-a
     // svaki callback kao parametre ima error i data,
@@ -21,7 +21,6 @@ const PoziviAjax = (async () => {
 
             if (this.status == 200) {
                 var data = JSON.parse(this.responseText);
-
                 fnCallback(null, data);
             } else {
                 var error = new Error('Error while reading currently logged user');
@@ -44,14 +43,14 @@ const PoziviAjax = (async () => {
             console.log('Podaci o korisniku:', data);
         }
     }
-   
-   
+
+
     const noviPodaci = {
-        username: "timur",
-        ime:"Nejra",
-        prezime:"Strsevic",
-       // password: await bcrypt.hash("maca123", 10)
-        
+        username: "nejrastr",
+        ime: "Nejra",
+        prezime: "Strsevic",
+        // password: await bcrypt.hash("maca123", 10)
+
     };
 
 
@@ -84,22 +83,43 @@ const PoziviAjax = (async () => {
 
 
     }
-   
 
 
+    const tekst_upita = {
+        tekst_upita: "radi li ovo"
 
-    function fnCallback(error, data) {
-        if (error) {
-            console.error('Greška:', error.message);
-        } else {
-            console.log('Odgovor:', data);
-        }
     }
 
     // dodaje novi upit za trenutno loginovanog korisnika
     function impl_postUpit(nekretnina_id, tekst_upita, fnCallback) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/upit', true);
+
+        //bitno za pravilno parsiranje json podataka
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function () {
+            if (this.status == 200) {
+                var data = JSON.parse(xhr.responseText);
+                fnCallback(null, data);
+
+            } else {
+                var error = new Error('Error while adding query');
+                fnCallback(error, null);
+            }
+        };
+        xhr.onerror = function () {
+            var error = new Error('Error with request');
+            fnCallback(error, null);
+
+        };
+        var jsonData = JSON.stringify({ nekretnina_id: nekretnina_id, tekst_upita: tekst_upita });
+        xhr.send(jsonData);
+
+
 
     }
+
+
     function impl_getNekretnine(fnCallback) {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', '/nekretnine', true);
@@ -120,57 +140,70 @@ const PoziviAjax = (async () => {
 
         xhr.send();
     }
-    function impl_postLogin(username, password, fnCallback) {
+
+
+
+
+     function impl_postLogin(username, password, fnCallback) {
         var xhr = new XMLHttpRequest();
         xhr.open('POST', '/login', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+
         xhr.onload = function () {
             if (xhr.status == 200) {
-                var data = JSON.parse(this.responseText);
+                var data = JSON.parse(xhr.responseText);
                 fnCallback(null, data);
+                window.location.href = '/profil.html';
+
             } else {
                 var error = new Error('Error while logging in');
                 fnCallback(error, null);
             }
-
         };
+
         xhr.onerror = function () {
             var error = new Error('Error with request');
             fnCallback(error, null);
         };
 
-        xhr.send();
-
-
+        var jsonData = JSON.stringify({ username: username, password: password });
+        xhr.send(jsonData);
+       
     }
-    function impl_postLogout(fnCallback) {
-        var xhr = new XMLHttpRequest();
+
+      function impl_postLogout(fnCallback) {
+        xhr = new XMLHttpRequest();
         xhr.open('POST', '/logout', true);
         xhr.onload = function () {
             if (xhr.status == 200) {
-                var data = JSON.parse(this.responseText);
+               
+                var data = JSON.parse(xhr.responseText);
                 fnCallback(null, data);
-            } else {
-                var error = new Error('Error while logging out');
-                fnCallback(error, null);
-            }
+                window.location.href = '/prijava.html';
 
+
+
+            } else {
+                var error = new Error('Error while logging in');
+                fnCallback(error, null);
+
+            }
         };
+
         xhr.onerror = function () {
             var error = new Error('Error with request');
             fnCallback(error, null);
         };
 
         xhr.send();
+     
+
+
     }
 
-
-    impl_getKorisnik(fnCallback);
-    //impl_putKorisnik(noviPodaci, fnCallback);
-    // impl_getNekretnine(fnCallback);
-    // impl_postLogout(fnCallback);
-    //impl_postLogin("itsarmeon",
-    // "1cde0f2b645d6212d4fc28bfc24cd9af",fnCallback);
-
+//impl_getKorisnik(fnCallback);
+//impl_putKorisnik(noviPodaci,fnCallback);
+impl_postUpit(1,tekst_upita,fnCallback);
     return {
         postLogin: impl_postLogin,
         postLogout: impl_postLogout,
@@ -178,5 +211,7 @@ const PoziviAjax = (async () => {
         putKorisnik: impl_putKorisnik,
         postUpit: impl_postUpit,
         getNekretnine: impl_getNekretnine
+
     };
-})();
+}
+

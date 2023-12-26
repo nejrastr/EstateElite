@@ -11,8 +11,7 @@
     
 </head>
 
-<body>
-   
+
     <body>
         <div class="container">
             <ul class="primary-nav" id="navList">
@@ -20,8 +19,8 @@
                 <li><a href="/profil.html"><strong>Profil</strong></a></li>
                 <li><a href="/nekretnina.html"><strong>Nekretnine</strong></a></li>
                 <li><a href="/detalji.html"><strong>Detalji</strong></a></li>
-                <li><form action="/logout" method="post">
-                        <button type="submit"><strong>Odjava</strong></button>
+                <li><form method="post" action="/logout"  >
+                        <button type="submit" id="logoutButton"><strong>Odjava</strong></button>
                     </form>
                 </li>
                 {{else}}
@@ -52,8 +51,8 @@
                             <a href="/profil.html"><strong>Profil</strong></a>
                             <a href="/nekretnina.html"><strong>Nekretnine</strong></a>
                             <a href="/detalji.html"><strong>Detalji</strong></a>
-                            <form action="/logout" method="post">
-                                <button type="submit"><strong>Odjava</strong></button>
+                            <form action="/logout" method="post" >
+                                <button type="submit" id="logoutButton"><strong>Odjava</strong></button>
                             </form>`;
                     } else {
                         
@@ -333,6 +332,8 @@
 <script  src="../js/SpisakNekretnina.js"></script>
 <script  src="../js/nekretnine.js"></script>
 <script src="../js/PoziviAjax.js"></script>
+
+
 
 
 

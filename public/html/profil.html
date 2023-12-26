@@ -16,8 +16,8 @@
                 <li><a href="profil.html"><strong>Profil</strong></a></li>
                 <li><a href="nekretnina.html"><strong>Nekretnine</strong></a></li>
                 <li><a href="detalji.html"><strong>Detalji</strong></a></li>
-                <li><form action="/logout" method="post">
-                    <button type="submit"><strong>Odjava</strong></button>
+                <li><form  method="post" action="/logout" id="logoutForm">
+                    <button type="submit" ><strong>Odjava</strong></button>
                 </form>
                 
             </ul>
@@ -29,16 +29,21 @@
     </div>
     
     <div class="sadrzaj">
-    <form  action="profil.html">
-    <label for="name">Ime</label>
-    <input type="text" id="name" name="name" placeholder="Input Field"><br><br>
-    <label for="surname">Prezime</label>
-    <input type="text" id="surname" name="surname" placeholder="Input Field"><br><br>
-    <label for="username">Username</label>
-    <input type="text" id="username" name="username" placeholder="Input Field"><br><br>
-    <label for="password">Password</label>
-    <input type="text" id="password" name="password" placeholder="Input Field">
-</form>
-</div>  
+        <form id="profileForm">
+            <label for="name">Ime</label>
+            <span id="nameDisplay"></span><br><br>
+            <label for="surname">Prezime</label>
+            <span id="surnameDisplay"></span><br><br>
+            <label for="username">Username</label>
+            <span id="usernameDisplay"></span><br><br>
+            <button type="button" id="userData">Prikazi podatke</button>
+        </form>
+    </div>
+
+
+   
 <script src="../js/PoziviAjax.js"></script>
+<script src="../js/odjava.js"></script>
+<script src="../js/dajKorisnike.js"></script>
 </body>
+</html>

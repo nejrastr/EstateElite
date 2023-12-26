@@ -13,19 +13,15 @@
     "upiti": [
       {
         "korisnik_id": 1,
-        "tekst_upita": "Nullam eu pede mollis pretium."
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
       },
       {
-        "korisnik_id": 2,
-        "tekst_upita": "Phasellus viverra nulla."
-      },
-      {
-        "korisnik_id": 2,
-        "tekst_upita": "pitanje"
-      },
-      {
-        "korisnik_id": 2,
-        "tekst_upita": "pitanje"
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
       }
     ]
   },

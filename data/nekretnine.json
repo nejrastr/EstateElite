@@ -22,6 +22,12 @@
         "tekst_upita": {
           "tekst_upita": "radi li ovo"
         }
+      },
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
       }
     ]
   },

@@ -2,7 +2,7 @@ document.getElementById('userData').addEventListener('click', async function (ev
     event.preventDefault();
 
     const pozivi=PoziviAjax();
-    console.log(pozivi)
+   
    pozivi.getKorisnik(fnCallback);
 });
 

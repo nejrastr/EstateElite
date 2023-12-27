@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "ime": "Nejra",
     "prezime": "Strsevic",
     "username": "nejrastr",
-    "password": "$2b$10$9mrr/ABscnLIphnFJSoXK.DVwh5LIaXbNiT0LeRr2GX506i6OP9tS"
+    "password": "$2b$10$QBcntXS.qs1QXZod95Iik.E8mG5uO64RFO9LUBXRmAjEduXeFKVEu",
+    "ime": "Nejra"
   },
   {
     "id": 2,

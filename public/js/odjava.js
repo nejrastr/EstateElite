@@ -1,9 +1,19 @@
-document.getElementById('logoutForm').addEventListener('submit', async function (event) {
-    event.preventDefault();
-    const pozivi = PoziviAjax();
-    console.log(pozivi);
-    pozivi.postLogout(fnCallback);
-});
+window.onload = function (){
+    if(document.getElementById('logoutForm')!= null)
+   { document.getElementById('logoutForm').addEventListener('submit', async function (event) {
+        event.preventDefault();
+        const pozivi = PoziviAjax();
+       
+        pozivi.postLogout(fnCallback);
+   });}
+}
+
+//document.getElementById('logoutForm').addEventListener('submit', async function (event) {
+    //event.preventDefault();
+    //const pozivi = PoziviAjax();
+   
+   // pozivi.postLogout(fnCallback);
+//});
 
 
 

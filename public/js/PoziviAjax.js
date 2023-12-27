@@ -40,18 +40,11 @@ const PoziviAjax = function () {
         if (error) {
             console.error('Greška:', error.message);
         } else {
-            console.log('Podaci o korisniku:', data);
+            console.log('Odgovor:', data);
         }
     }
 
 
-    const noviPodaci = {
-        username: "nejrastr",
-        ime: "Nejra",
-        prezime: "Strsevic",
-        // password: await bcrypt.hash("maca123", 10)
-
-    };
 
 
     // ažurira podatke loginovanog korisnika
@@ -153,7 +146,7 @@ const PoziviAjax = function () {
             if (xhr.status == 200) {
                 var data = JSON.parse(xhr.responseText);
                 fnCallback(null, data);
-                window.location.href = '/profil.html';
+                window.location.href = '/nekretnina.html';
 
             } else {
                 var error = new Error('Error while logging in');
@@ -175,7 +168,7 @@ const PoziviAjax = function () {
         xhr = new XMLHttpRequest();
         xhr.open('POST', '/logout', true);
         xhr.onload = function () {
-            if (xhr.status == 200) {
+            if (xhr.status == 200 ) {
                
                 var data = JSON.parse(xhr.responseText);
                 fnCallback(null, data);
@@ -203,7 +196,8 @@ const PoziviAjax = function () {
 
 //impl_getKorisnik(fnCallback);
 //impl_putKorisnik(noviPodaci,fnCallback);
-impl_postUpit(1,tekst_upita,fnCallback);
+//impl_postUpit(1,tekst_upita,fnCallback);
+//impl_getNekretnine(fnCallback);
     return {
         postLogin: impl_postLogin,
         postLogout: impl_postLogout,
@@ -214,4 +208,3 @@ impl_postUpit(1,tekst_upita,fnCallback);
 
     };
 }
-

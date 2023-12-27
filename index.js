@@ -159,7 +159,7 @@ app.put('/korisnik', (req, res) => {
       user.username = username;
     }
     if (password) {
-      user.password = bcrypt.hash(password,10);
+      user.password = bcrypt.hashSync(password,10);
     }
 
     fs.writeFileSync('data/korisnici.json', JSON.stringify(korisnici, null, 2));

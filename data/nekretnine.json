@@ -52,5 +52,223 @@
         "tekst_upita": "Imate li klimu"
       }
     ]
+  },{
+    "id": 3,
+    "tip_nekretnine": "Kuca",
+    "naziv": "Kuca Sarajevo",
+    "kvadratura": 100,
+    "cijena": 300000,
+    "tip_grijanja": "plin",
+    "lokacija": "Novo Sarajevo",
+    "godina_izgradnje": 2019,
+    "datum_objave": "01.10.2023.",
+    "opis": "Sociis natoque penatibus.",
+    "upiti": [
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      },
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      },
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      }
+    ]
+  },{
+    "id": 4,
+    "tip_nekretnine": "Stan",
+    "naziv": "Garsonjera Sarajevo",
+    "kvadratura": 30,
+    "cijena": 52000,
+    "tip_grijanja": "plin",
+    "lokacija": "Novo Sarajevo",
+    "godina_izgradnje": 2019,
+    "datum_objave": "01.10.2023.",
+    "opis": "Sociis natoque penatibus.",
+    "upiti": [
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      },
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      },
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      }
+    ]
+  },{
+    "id": 5,
+    "tip_nekretnine": "Stan",
+    "naziv": "Veliki Sarajevo",
+    "kvadratura": 200,
+    "cijena": 400000,
+    "tip_grijanja": "plin",
+    "lokacija": "Novo Sarajevo",
+    "godina_izgradnje": 2019,
+    "datum_objave": "01.10.2023.",
+    "opis": "Sociis natoque penatibus.",
+    "upiti": [
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      },
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      },
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      }
+    ]
+  },{
+    "id": 6,
+    "tip_nekretnine": "Kuca",
+    "naziv": "Porodicna kuca Sarajevo",
+    "kvadratura": 120,
+    "cijena": 150000,
+    "tip_grijanja": "plin",
+    "lokacija": "Novo Sarajevo",
+    "godina_izgradnje": 2019,
+    "datum_objave": "01.10.2023.",
+    "opis": "Sociis natoque penatibus.",
+    "upiti": [
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      },
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      },
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      }
+    ]
+  },{
+    "id": 7,
+    "tip_nekretnine": "Kuca",
+    "naziv": "Luksuzna kuca Sarajevo",
+    "kvadratura": 200,
+    "cijena": 500000,
+    "tip_grijanja": "plin",
+    "lokacija": "Novo Sarajevo",
+    "godina_izgradnje": 2019,
+    "datum_objave": "01.10.2023.",
+    "opis": "Sociis natoque penatibus.",
+    "upiti": [
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      },
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      },
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      }
+    ]
+  },{
+    "id": 8,
+    "tip_nekretnine": "Poslovni prostor",
+    "naziv": "Poslovni prostor Sarajevo",
+    "kvadratura": 30,
+    "cijena": 80000,
+    "tip_grijanja": "plin",
+    "lokacija": "Novo Sarajevo",
+    "godina_izgradnje": 2019,
+    "datum_objave": "01.10.2023.",
+    "opis": "Sociis natoque penatibus.",
+    "upiti": [
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      },
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      },
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      }
+    ]
+  },{
+    "id": 9,
+    "tip_nekretnine": "Poslovni prostor",
+    "naziv": "Sala Sarajevo",
+    "kvadratura": 100,
+    "cijena": 100000,
+    "tip_grijanja": "plin",
+    "lokacija": "Novo Sarajevo",
+    "godina_izgradnje": 2019,
+    "datum_objave": "01.10.2023.",
+    "opis": "Sociis natoque penatibus.",
+    "upiti": [
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      },
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      },
+      {
+        "korisnik_id": 1,
+        "tekst_upita": {
+          "tekst_upita": "radi li ovo"
+        }
+      }
+    ]
   }
+
 ]

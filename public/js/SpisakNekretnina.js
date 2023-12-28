@@ -55,4 +55,6 @@ let SpisakNekretnina = function () {
     }
 };
 
+//let nekretnine = SpisakNekretnina();
+
 //export {SpisakNekretnina}

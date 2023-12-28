@@ -8,12 +8,7 @@ window.onload = function (){
    });}
 }
 
-//document.getElementById('logoutForm').addEventListener('submit', async function (event) {
-    //event.preventDefault();
-    //const pozivi = PoziviAjax();
-   
-   // pozivi.postLogout(fnCallback);
-//});
+
 
 
 

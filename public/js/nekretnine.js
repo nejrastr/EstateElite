@@ -1,10 +1,10 @@
 
 
 
-function spojiNekretnine(divReferenca, instancaModula, tip_nekretnine) {
+function spojiNekretnine(divReferenca, instancaModula, tip_nekretnine, filterCriteria) {
   
   
-  const nekretnine=instancaModula.filtrirajNekretnine({ tip_nekretnine: tip_nekretnine });
+  const nekretnine=instancaModula.filtrirajNekretnine({ tip_nekretnine: tip_nekretnine,...filterCriteria, });
 
   const div=document.getElementById(divReferenca.id);
   if(!div){
@@ -99,7 +99,8 @@ pozivi.getNekretnine(function(err,data){
  
     nekretnine.init(listaNekretnina, listaKorisnika);
     
-  }spojiNekretnine(divStan, nekretnine, "Stan");
+  }
+  spojiNekretnine(divStan, nekretnine, "Stan");
   spojiNekretnine(divKuca, nekretnine, "Kuca");
   spojiNekretnine(divPp, nekretnine, "Poslovni prostor");
   

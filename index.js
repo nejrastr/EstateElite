@@ -5,6 +5,9 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
 const { log } = require('console');
+const SpisakNekretnina = require('./public/js/SpisakNekretnina');
+
+//const modul= require('./public/js/SpisakNekretnina').default; 
 const app = express();
 
 app.use(session({
@@ -12,6 +15,9 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }));
+
+
+
 
 
 let isLogged = false;
@@ -28,12 +34,13 @@ app.use('/js', express.static(path.join(__dirname, 'public', 'js')));
 
 
 
+
 app.post('/login', async (req, res) => {
   const korisnici = JSON.parse(fs.readFileSync('data/korisnici.json', 'utf-8'));
   const { username, password } = req.body;
 
   // const hashedPassword = await bcrypt.hash(password, 10)
-  
+
   let korisnik = null;
 
   for (let i = 0; i < korisnici.length; i++) {
@@ -159,7 +166,7 @@ app.put('/korisnik', (req, res) => {
       user.username = username;
     }
     if (password) {
-      user.password = bcrypt.hashSync(password,10);
+      user.password = bcrypt.hashSync(password, 10);
     }
 
     fs.writeFileSync('data/korisnici.json', JSON.stringify(korisnici, null, 2));
@@ -179,6 +186,38 @@ app.get('/nekretnine', (req, res) => {
 
 
 
+
+
+
+
+
+
+app.post('/marketing/nekretnine', (req, res) => {
+  const { nizNekretnina } = req.body;
+  const trenutnePreferencije = fs.readFileSync('data/preferencije.json', 'utf-8');
+  let preferencije = JSON.parse(trenutnePreferencije);
+
+  nizNekretnina.forEach((id) => {
+    const objekat = preferencije.find((element) => element.id === id);
+    if (objekat) {
+      objekat.pretrage += 1;
+    } else {
+      preferencije.push({
+        id: id,
+        pretrage: 1,
+        klikovi: 0
+      });
+    }
+
+  });
+
+  fs.writeFileSync('data/preferencije.json', JSON.stringify(preferencije, null, 2));
+  res.status(200).json({ poruka: 'Uspjesno poslani IDijevi' });
+});
+app.post('marketing/nekretnina/:id', (req,res)=>{
+  
+
+});
 
 app.listen(3000, () => {
   console.log("Uspješno otvaranje porta 3000");

@@ -4,8 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
-const { log } = require('console');
-const SpisakNekretnina = require('./public/js/SpisakNekretnina');
+
+
 
 //const modul= require('./public/js/SpisakNekretnina').default; 
 const app = express();
@@ -185,13 +185,6 @@ app.get('/nekretnine', (req, res) => {
 });
 
 
-
-
-
-
-
-
-
 app.post('/marketing/nekretnine', (req, res) => {
   const { nizNekretnina } = req.body;
   const trenutnePreferencije = fs.readFileSync('data/preferencije.json', 'utf-8');
@@ -210,14 +203,80 @@ app.post('/marketing/nekretnine', (req, res) => {
     }
 
   });
-
+  
   fs.writeFileSync('data/preferencije.json', JSON.stringify(preferencije, null, 2));
   res.status(200).json({ poruka: 'Uspjesno poslani IDijevi' });
 });
-app.post('marketing/nekretnina/:id', (req,res)=>{
-  
 
+app.post('/marketing/nekretnina/:id', (req, res) => {
+  try {
+    const id = req.params.id; 
+    const trenutnePreferencije = fs.readFileSync('data/preferencije.json', 'utf-8');
+    let preferencije = JSON.parse(trenutnePreferencije);
+
+    const index = preferencije.findIndex((element) => element.id === id);
+    if (index !== -1) {
+      preferencije[index].klikovi += 1;
+    } else {
+      preferencije.push({
+        id: parseInt(idNekretnine), 
+        pretrage: 1,
+        klikovi: 1
+      });
+    }
+
+    fs.writeFileSync('data/preferencije.json', JSON.stringify(preferencije, null, 2));
+    res.status(200).json({ poruka: 'Zahtjev uspješno poslan' });
+  } catch (error) {
+    console.error('Error in /marketing/nekretnina/:id:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
+
+app.post('/marketing/osvjezi', (req, res) => {
+  try {
+      const { nizNekretnina } = req.body;
+
+      if (nizNekretnina) {
+        
+          const trenutnePreferencije = fs.readFileSync('data/preferencije.json', 'utf-8');
+          let preferencije = JSON.parse(trenutnePreferencije);
+
+          const promijenjeneNekretnine = preferencije.filter(nekretnina => nizNekretnina.includes(nekretnina.id));
+
+          if (JSON.stringify(promijenjeneNekretnine) !== JSON.stringify(preferencije)) {
+              promijenjeneNekretnine.forEach(nekretnina => {
+                  const index = preferencije.findIndex(element => element.id === nekretnina.id);
+                  if (index !== -1) {
+                      preferencije[index].pretrage += 1;
+                  }
+              });
+
+            
+              fs.writeFileSync('data/preferencije.json', JSON.stringify(preferencije, null, 2));
+
+             
+              res.status(200).json({ nizNekretnina: promijenjeneNekretnine });
+          } else {
+             
+              res.status(200).json({});
+          }
+      } else {
+          
+          res.status(400).json({ error: 'Neispravno tijelo zahtjeva' });
+      }
+  } catch (error) {
+     
+      res.status(500).json({ error: 'server error' });
+  }
+});
+
+  
+ 
+
+
+
+
 
 app.listen(3000, () => {
   console.log("Uspješno otvaranje porta 3000");

@@ -16,19 +16,8 @@
         "tekst_upita": {
           "tekst_upita": "radi li ovo"
         }
-      },
-      {
-        "korisnik_id": 1,
-        "tekst_upita": {
-          "tekst_upita": "radi li ovo"
-        }
-      },
-      {
-        "korisnik_id": 1,
-        "tekst_upita": {
-          "tekst_upita": "radi li ovo"
-        }
       }
+     
     ]
   },
   {
@@ -46,10 +35,6 @@
       {
         "korisnik_id": 2,
         "tekst_upita": "Integer tincidunt."
-      },
-      {
-        "korisnik_id": 2,
-        "tekst_upita": "Imate li klimu"
       }
     ]
   },{
@@ -64,18 +49,6 @@
     "datum_objave": "01.10.2023.",
     "opis": "Sociis natoque penatibus.",
     "upiti": [
-      {
-        "korisnik_id": 1,
-        "tekst_upita": {
-          "tekst_upita": "radi li ovo"
-        }
-      },
-      {
-        "korisnik_id": 1,
-        "tekst_upita": {
-          "tekst_upita": "radi li ovo"
-        }
-      },
       {
         "korisnik_id": 1,
         "tekst_upita": {
@@ -100,18 +73,6 @@
         "tekst_upita": {
           "tekst_upita": "radi li ovo"
         }
-      },
-      {
-        "korisnik_id": 1,
-        "tekst_upita": {
-          "tekst_upita": "radi li ovo"
-        }
-      },
-      {
-        "korisnik_id": 1,
-        "tekst_upita": {
-          "tekst_upita": "radi li ovo"
-        }
       }
     ]
   },{
@@ -131,18 +92,6 @@
         "tekst_upita": {
           "tekst_upita": "radi li ovo"
         }
-      },
-      {
-        "korisnik_id": 1,
-        "tekst_upita": {
-          "tekst_upita": "radi li ovo"
-        }
-      },
-      {
-        "korisnik_id": 1,
-        "tekst_upita": {
-          "tekst_upita": "radi li ovo"
-        }
       }
     ]
   },{
@@ -157,18 +106,6 @@
     "datum_objave": "01.10.2023.",
     "opis": "Sociis natoque penatibus.",
     "upiti": [
-      {
-        "korisnik_id": 1,
-        "tekst_upita": {
-          "tekst_upita": "radi li ovo"
-        }
-      },
-      {
-        "korisnik_id": 1,
-        "tekst_upita": {
-          "tekst_upita": "radi li ovo"
-        }
-      },
       {
         "korisnik_id": 1,
         "tekst_upita": {

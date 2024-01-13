@@ -7,6 +7,8 @@ const session = require('express-session');
 
 
 
+
+
 //const modul= require('./public/js/SpisakNekretnina').default; 
 const app = express();
 

@@ -154,34 +154,19 @@ app.get("/nekretnine", async (req, res) => {
   res.status(200).json(nekretnine);
 });
 
-app.get("/nekretnina/:id", (req, res) => {
-  const { id } = req.body;
+app.get("/nekretnina/:id", async(req, res) => {
+  const nekretninaId=req.params.id;
 
-  // Check if id is a valid integer
-  const nekretninaId = parseInt(id);
-  if (isNaN(nekretninaId) || nekretninaId <= 0) {
-    return res.status(400).json({ greska: "Invalid nekretnina ID" });
+  const nekretnina=await sequelizeDB.nekretnina.findByPk(nekretninaId);
+  
+  if(nekretnina){
+    
+    res.status(200).json(nekretnina);
   }
-
-  try {
-    const nekretnineData = fs.readFileSync("data/nekretnine.json", "utf8");
-    const nekretnine = JSON.parse(nekretnineData);
-
-    const foundNekretnina = nekretnine.find(
-      (nekretnina) => nekretnina.id === nekretninaId
-    );
-
-    if (foundNekretnina) {
-      res.status(200).json(foundNekretnina);
-    } else {
-      res
-        .status(400)
-        .json({ greska: `Nekretnina sa id-em ${nekretninaId} ne postoji` });
-    }
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ greska: "Internal Server Error" });
+  else{
+    res.status(400).json({greska: `Nekretnina sa id-em ${nekretninaId} ne postoji`});
   }
+ 
 });
 
 app.post("/marketing/nekretnine", (req, res) => {

@@ -194,6 +194,29 @@ const PoziviAjax = function () {
 
     }
 
+    function impl_getNekretninaById(nekretninaId, fnCallback){
+        xhr=new XMLHttpRequest();
+        xhr.open('GET', '/nekretnina/'+nekretninaId, true);
+        xhr.onload=function(){
+            if(xhr.status==200){
+                let data=JSON.parse(this.responseText);
+
+                console.log("podaci: ", data) ;
+                
+                fnCallback(null,data);
+               // window.location.href = `detalji.html?id=${nekretninaId}`;
+            }else{
+                var error=new Error('Error with getting property by id');
+                fnCallback(error, null);
+            }
+        };
+
+        xhr.onerror=function(){
+            var error=new Error('Error with request');
+            fnCallback(error, null);
+        };
+        xhr.send();
+    }
 //impl_getKorisnik(fnCallback);
 //impl_putKorisnik(noviPodaci,fnCallback);
 //impl_postUpit(1,tekst_upita,fnCallback);
@@ -204,7 +227,8 @@ const PoziviAjax = function () {
         getKorisnik: impl_getKorisnik,
         putKorisnik: impl_putKorisnik,
         postUpit: impl_postUpit,
-        getNekretnine: impl_getNekretnine
+        getNekretnine: impl_getNekretnine,
+        getNekretninaById:impl_getNekretninaById
 
     };
 }

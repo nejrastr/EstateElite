@@ -7,7 +7,7 @@ module.exports=function(sequelize,DataTypes){
         naziv:Sequelize.STRING,
         kvadratura:Sequelize.INTEGER,
         cijena:Sequelize.INTEGER,
-        tip_grijanja: Sequelize.INTEGER,
+        tip_grijanja: Sequelize.STRING,
         lokacija:Sequelize.STRING,
         godina_izgradnje:Sequelize.INTEGER,
         datum_objave:Sequelize.STRING,

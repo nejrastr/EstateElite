@@ -30,7 +30,7 @@ for(let nekretnina of nekretnine){
     <div class="desne-informacije">
         <p>Cijena: ${nekretnina.cijena} KM</p>
     </div>
-    <button class="detalji">Detalji</button>
+    <button class="detalji" onclick="expandGrid(this)">Detalji</button>
 </div>`
   }else if(nekretnina.tip_nekretnine=="Kuca"){
     let slikica="https://www.nekretnineinn.ba/wp-content/uploads/2018/02/Moderna-lepotica-Ku%C4%87a-koja-%C4%87e-vas-osvojiti-na-prvi-pogled-8-830x458.jpg";
@@ -45,7 +45,7 @@ for(let nekretnina of nekretnine){
     <div class="desne-informacije">
         <p>Cijena: ${nekretnina.cijena} KM</p>
     </div>
-    <button class="detalji">Detalji</button>
+    <button class="detalji" onclick="expandGrid(this)">Detalji</button>
 </div>`
 
   }else if(nekretnina.tip_nekretnine=="Poslovni prostor"){
@@ -63,7 +63,7 @@ for(let nekretnina of nekretnine){
     <div class="desne-informacije">
         <p>Cijena: ${nekretnina.cijena} KM</p>
     </div>
-    <button class="detalji">Detalji</button>
+    <button class="detalji" onclick="expandGrid(this)">Detalji</button>
 </div>`
 
 
@@ -74,6 +74,17 @@ div.innerHTML=htmlContent;
 
 
 }
+
+function expandGrid(button) {
+  const clanDiv = button.closest('.clan');
+  clanDiv.classList.toggle('clan-expanded');
+}
+const detaljiButtons = document.querySelectorAll('.detalji');
+detaljiButtons.forEach(button => {
+  button.addEventListener('click', function () {
+    expandGrid(this);
+  });
+});
 
 const divStan = document.getElementById("stan");
 const divKuca = document.getElementById("kuca");

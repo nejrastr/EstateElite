@@ -102,6 +102,11 @@ img {
   
 
 }
+.clan-expanded {
+  grid-column: span 2; 
+  width: 500px;
+  margin: 0 auto; 
+}
 
 #stan .clan {
   background-color: white;

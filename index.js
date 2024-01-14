@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
+//const sequelizeDB=require('./data/baza.js');
 
 
 
@@ -179,11 +180,36 @@ app.put('/korisnik', (req, res) => {
   }
 
 });
-
-
 app.get('/nekretnine', (req, res) => {
   const nekretnine = JSON.parse(fs.readFileSync('data/nekretnine.json', 'utf8'));
   res.status(200).json(nekretnine);
+});
+
+
+app.get('/nekretnina/:id', (req, res) => {
+  const { id } = req.body;
+
+  // Check if id is a valid integer
+  const nekretninaId = parseInt(id);
+  if (isNaN(nekretninaId) || nekretninaId <= 0) {
+    return res.status(400).json({ greska: 'Invalid nekretnina ID' });
+  }
+
+  try {
+    const nekretnineData = fs.readFileSync('data/nekretnine.json', 'utf8');
+    const nekretnine = JSON.parse(nekretnineData);
+
+    const foundNekretnina = nekretnine.find((nekretnina) => nekretnina.id === nekretninaId);
+
+    if (foundNekretnina) {
+      res.status(200).json(foundNekretnina);
+    } else {
+      res.status(400).json({ greska: `Nekretnina sa id-em ${nekretninaId} ne postoji` });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ greska: 'Internal Server Error' });
+  }
 });
 
 

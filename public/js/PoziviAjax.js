@@ -198,6 +198,7 @@ const PoziviAjax = function () {
                
                 var data = JSON.parse(xhr.responseText);
                 fnCallback(null, data);
+             
                 window.location.href = '/prijava.html';
 
 

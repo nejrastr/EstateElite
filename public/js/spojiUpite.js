@@ -72,8 +72,7 @@ function provjeriPrijavu() {
         console.error("Greška prilikom dohvaćanja informacija o prijavi:", error);
       });
   }
-  
-  // Poziv funkcije kada želite provjeriti status prijave
+ 
  
   
 

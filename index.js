@@ -92,6 +92,22 @@ app.get("/korisnik", async (req, res) => {
 app.get("/isLogged", (req, res) => {
   res.json({ isLogged });
 });
+app.get("/korisnikId/:id", async (req,res)=>{
+   const id=req.params.id;
+    const user = await sequelizeDB.korisnik.findOne({
+      where: {
+        id: id,
+      },
+    });
+    if (user) {
+      res.status(200).json(user);
+    } else {
+      res.status(401).json({ greska: "Korisnik s tim IDijem ne postoji" });
+    }
+  
+
+
+});
 
 app.post("/upit", async (req, res) => {
   if (req.session.username) {
@@ -153,6 +169,31 @@ app.get("/nekretnine", async (req, res) => {
   const nekretnine=await sequelizeDB.nekretnina.findAll();
   res.status(200).json(nekretnine);
 });
+
+app.get("/postojeciUpiti/:id", async (req, res) => {
+  const nekretninaId = req.params.id;
+  console.log(nekretninaId)
+  console.log(req.params)
+  try {
+    
+    const nekretnina = await sequelizeDB.nekretnina.findByPk(nekretninaId);
+    
+    if (!nekretnina) {
+      return res.status(404).json({ greska: "Nekretnina nije pronađena" });
+    }
+
+    
+    const upiti = await sequelizeDB.upit.findAll({
+      where: { nekretninaId: nekretninaId },
+    });
+
+    res.status(200).json(upiti);
+  } catch (error) {
+    console.error("Greška prilikom dobijanja upita:", error);
+    res.status(500).json({ greska: "Greška prilikom dobijanja upita" });
+  }
+});
+
 
 app.get("/nekretnina/:id", async(req, res) => {
   const nekretninaId=req.params.id;

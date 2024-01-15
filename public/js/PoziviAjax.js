@@ -111,6 +111,32 @@ const PoziviAjax = function () {
 
 
     }
+    function impl_getUpiti(nekretnina_id, fnCallback){
+        var xhr=new XMLHttpRequest();
+        console.log("ID: ", nekretnina_id)
+        xhr.open('GET', `/postojeciUpiti/`+nekretnina_id, true);
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                var data = JSON.parse(xhr.responseText);
+               
+                fnCallback(null, data);
+                console.log(data)
+            } else {
+                var error = new Error('Error while returning queries');
+                fnCallback(error, null);
+            }
+
+        };
+        xhr.onerror = function () {
+            var error = new Error('Error with request');
+            fnCallback(error, null);
+        };
+
+        xhr.send();
+
+
+    }
+
 
 
     function impl_getNekretnine(fnCallback) {
@@ -217,6 +243,34 @@ const PoziviAjax = function () {
         };
         xhr.send();
     }
+
+    function impl_getKorisnikId(korisnikId, fnCallback) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/korisnikId/' + korisnikId, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+    
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                let data = JSON.parse(this.responseText);
+                console.log("Podaci:", data);
+                fnCallback(null, data);
+            } else {
+                var error = new Error('Error with getting user by id');
+                fnCallback(error, null);
+            }
+        };
+    
+        xhr.onerror = function () {
+            var error = new Error('Error with request');
+            fnCallback(error, null);
+        };
+    
+        xhr.send();
+    }
+    
+
+    
+    //impl_getKorisnikId(1,fnCallback);
 //impl_getKorisnik(fnCallback);
 //impl_putKorisnik(noviPodaci,fnCallback);
 //impl_postUpit(1,tekst_upita,fnCallback);
@@ -228,7 +282,9 @@ const PoziviAjax = function () {
         putKorisnik: impl_putKorisnik,
         postUpit: impl_postUpit,
         getNekretnine: impl_getNekretnine,
-        getNekretninaById:impl_getNekretninaById
+        getNekretninaById:impl_getNekretninaById,
+        getUpiti: impl_getUpiti,
+        getKorisnikId: impl_getKorisnikId
 
     };
 }

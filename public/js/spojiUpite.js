@@ -1,3 +1,5 @@
+provjeriPrijavu();
+
 prikaziUpite();
 
 function prikaziUpite() {
@@ -34,3 +36,44 @@ function prikaziUpite() {
         }
     });
 }
+
+function provjeriPrijavu() {
+  
+    fetch("/isLogged")
+      .then((response) => response.json())
+      .then((data) => {
+        const isLogged = data.isLogged;
+        console.log("Da li je prijavljen: ", isLogged);
+        if(isLogged){
+            document.getElementById("dodaniUpiti").style.display='block';
+            document.getElementById("upitButton").onclick=function(event){
+                event.preventDefault();
+                let id=localStorage.getItem("id");
+                let tekst=document.getElementById("upitiTekst").value;
+                const pozivi=PoziviAjax();
+                pozivi.postUpit(id,tekst,function(error,data){
+                    if(error){
+                        alert("Neuspjesno dodan upit");
+                        document.getElementById("dodaniUpiti").style.display='none';
+                    }else{
+                        document.getElementById("dodaniUpiti").value="";
+                        prikaziUpite();
+                        alert("Uspjesno dodan upit");
+                    }
+                })
+            }
+
+        }else{
+            document.getElementById("dodaniUpiti").style.display = 'none';
+        }
+    
+      })
+      .catch((error) => {
+        console.error("Greška prilikom dohvaćanja informacija o prijavi:", error);
+      });
+  }
+  
+  // Poziv funkcije kada želite provjeriti status prijave
+ 
+  
+

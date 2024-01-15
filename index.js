@@ -28,7 +28,7 @@ app.use("/css", express.static(path.join(__dirname, "public", "css")));
 app.use("/js", express.static(path.join(__dirname, "public", "js")));
 
 app.post("/login", async (req, res) => {
-  // const korisnici = JSON.parse(fs.readFileSync('data/korisnici.json', 'utf-8'));
+ 
   const { username, password } = req.body;
   try {
     const user = await sequelizeDB.korisnik.findOne({
@@ -70,6 +70,7 @@ app.post("/logout", (req, res) => {
   }
 });
 //ruta
+
 app.get("/korisnik", async (req, res) => {
   if (req.session.username) {
     //console.log('Sesija korisnika:', req.session.username);

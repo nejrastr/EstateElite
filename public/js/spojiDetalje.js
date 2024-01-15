@@ -11,15 +11,17 @@
     } else {
        
         const detaljiContainer = document.getElementById("detaljiNekretnine");
-       
+       const osnovnoContainer=document.getElementById("OsnovnoNekretnina");
         //console.log(detaljiContainer)
         console.log(data)
+        osnovnoContainer.innerHTML=`<div id="osnovno">
+      <p><strong>Naziv</strong>: ${data.naziv}</p>
+      <p><strong>Kvadratura:</strong> ${data.kvadratura} m&sup2;</p>
+      <p><strong>Cijena:</strong> ${data.cijena} KM</p>
+    </div>`;
+      
         detaljiContainer.innerHTML = `
-        <div id="osnovno">
-          <p><strong>Naziv</strong>: ${data.naziv}</p>
-          <p><strong>Kvadratura:</strong> ${data.kvadratura} m&sup2;</p>
-          <p><strong>Cijena:</strong> ${data.cijena} KM</p>
-        </div>
+        
         <div id="detalji">
           <p><strong>Lokacija:</strong> ${data.lokacija}</p>
           <p><strong>Tip grijanja:</strong> ${data.tip_grijanja}</p>
